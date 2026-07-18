@@ -1,167 +1,80 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Portfolio</title>
+    <title>Sara Tabikh — Engineering Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h1>Portfolio</h1>
-            </div>
+        <div class="container nav-container">
+            <div class="nav-brand"><a href="index.html">Portfolio - Sara Tabikh</a></div>
             <ul class="nav-tabs">
-                <li><a href="#" class="tab-link active" data-tab="home">Home</a></li>
-                <li><a href="#" class="tab-link" data-tab="projects">Projects</a></li>
+                <li><a href="index.html" class="tab-link active">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="projects.html" class="tab-link">Projects</a>
+                    <div class="dropdown-menu">
+                        <a href="project-safety-mhpr.html">Safety in MHPR</a>
+                        <a href="project-solaris-mkiii.html">Solaris MkIII</a>
+                        <a href="project-zenith.html">Project Zenith</a>
+                        <a href="project-motorsport.html">Monash Motorsport</a>
+                        <a href="project-intakes.html">Resonance in Supersonic Intakes</a>
+                    </div>
+                </li>
                 <li><a href="resume.pdf" class="tab-link resume-link" target="_blank">Resume</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main-content">
-        <!-- Home Tab -->
-        <section id="home" class="tab-content active">
-            <div class="container">
-                <div class="hero">
-                    <div class="hero-text">
-                        <h2>Hello, I'm [Your Name]</h2>
-                        <p class="subtitle">Engineering Student • [Your Specialization] • Problem Solver</p>
-                        <p class="bio">
-                            I'm passionate about solving complex engineering challenges through innovative design and teamwork. 
-                            I've collaborated with talented student teams on projects ranging across different disciplines, 
-                            gaining hands-on experience in system design, prototyping, and project execution.
-                        </p>
-                        <div class="cta">
-                            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\"projects\"]').click()">View My Projects</button>
-                            <a href="resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
-                        </div>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Monash High Powered Rocketry · Monash Motorsport · Shock Lab Research Group</p>
+                    <h1>Sara Tabikh</h1>
+                    <p class="hero-description">
+                        Safety Lead and Propulsion Engineer for Monash High Powered Rocketry, Aerodynamics and Vehicle Dynamics engineer for Monash Motorsport, and Final Year Project researcher in resonance of supersonic intakes.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-primary">View Projects</a>
+                        <a href="resume.pdf" class="btn btn-secondary" target="_blank">Resume</a>
                     </div>
                 </div>
-
-                <section class="skills-section">
-                    <h3>What I Bring</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <h4>Technical Design</h4>
-                            <p>Experience in CAD modeling, system design, and technical documentation to bring ideas to life.</p>
-                        </div>
-                        <div class="skill-card">
-                            <h4>Team Leadership</h4>
-                            <p>Proven ability to collaborate effectively within diverse student teams and lead technical initiatives.</p>
-                        </div>
-                        <div class="skill-card">
-                            <h4>Problem Solving</h4>
-                            <p>Analytical mindset to identify challenges and develop practical, innovative solutions.</p>
-                        </div>
-                        <div class="skill-card">
-                            <h4>Project Management</h4>
-                            <p>Successfully managing timelines, resources, and deliverables from concept through execution.</p>
-                        </div>
-                    </div>
-                </section>
             </div>
         </section>
 
-        <!-- Projects Tab -->
-        <section id="projects" class="tab-content">
+        <section class="summary-section">
             <div class="container">
-                <h2>Featured Projects</h2>
-                <p class="section-subtitle">Student team projects showcasing engineering excellence</p>
-                
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Project Title One</h3>
-                            <span class="project-type">Mechanical Engineering</span>
-                        </div>
-                        <p class="project-description">
-                            Brief description of your first project. Highlight what you and your team built, the key technologies used, 
-                            and the impact or achievements. Keep this concise but detailed enough to spark interest.
-                        </p>
-                        <div class="project-details">
-                            <span class="detail-item">🗓️ Year</span>
-                            <span class="detail-item">👥 Team Size</span>
-                            <span class="detail-item">🏆 Recognition/Award (if applicable)</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                        </div>
+                <h2>Project Highlights</h2>
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3>Safety Leadership</h3>
+                        <p>Manage a 15-person safety team and upskill 150+ members through standardised Risk Assessments, Safe Work Instructions, and safety gates in design reviews.</p>
                     </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Project Title Two</h3>
-                            <span class="project-type">Systems Engineering</span>
-                        </div>
-                        <p class="project-description">
-                            Description of your second project. Explain your role within the team, the technical challenges faced, 
-                            and how you contributed to the solution. Include any notable results or innovations.
-                        </p>
-                        <div class="project-details">
-                            <span class="detail-item">🗓️ Year</span>
-                            <span class="detail-item">👥 Team Size</span>
-                            <span class="detail-item">🏆 Recognition/Award (if applicable)</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                        </div>
+                    <div class="summary-card">
+                        <h3>Propulsion Engineering</h3>
+                        <p>Design, machine and test a 10 kN LOX hybrid engine, support 4 kN N2O hybrid engine static fires and launches, and integrate components in Creo and Windchill.</p>
                     </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Project Title Three</h3>
-                            <span class="project-type">Design & Manufacturing</span>
-                        </div>
-                        <p class="project-description">
-                            Tell the story of your third project. What was the objective? What engineering principles did you apply? 
-                            What was the outcome? Make it engaging and specific to demonstrate your expertise.
-                        </p>
-                        <div class="project-details">
-                            <span class="detail-item">🗓️ Year</span>
-                            <span class="detail-item">👥 Team Size</span>
-                            <span class="detail-item">🏆 Recognition/Award (if applicable)</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                        </div>
+                    <div class="summary-card">
+                        <h3>Composite & Aero</h3>
+                        <p>Design a high-downforce rear wing in Siemens NX and SolidWorks, fabricate 15+ composite structures, and validate CFD with wind tunnel data.</p>
                     </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Project Title Four</h3>
-                            <span class="project-type">Research & Development</span>
-                        </div>
-                        <p class="project-description">
-                            Add more projects as needed. Each project should demonstrate different skills and provide a well-rounded 
-                            view of your engineering capabilities and experiences.
-                        </p>
-                        <div class="project-details">
-                            <span class="detail-item">🗓️ Year</span>
-                            <span class="detail-item">👥 Team Size</span>
-                            <span class="detail-item">🏆 Recognition/Award (if applicable)</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="link">Learn More →</a>
-                        </div>
+                    <div class="summary-card">
+                        <h3>Supersonic Research</h3>
+                        <p>Investigate resonance in supersonic intakes with CFD, supersonic wind tunnel testing and high-speed schlieren imaging for a final year project.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 [Your Name]. All rights reserved.</p>
-            <div class="social-links">
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>2026 Sara Tabikh. All rights reserved.</p>
+            <div class="footer-links">
                 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
                 <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
             </div>
         </div>
     </footer>
