@@ -1,13 +1,13 @@
 ﻿:root {
-    --cream: #f6ede1;
+    --cream: #faf3e9;
     --surface: #ffffff;
-    --accent: #d9d1e8;
+    --accent: #e5e2eb;
     --text: #2f321f;
     --muted: #6d6a56;
     --border: #e4d8c8;
     --button: #4b4930;
     --button-hover: #2f3320;
-    --card: #fbf7f1;
+    --card: #fffefd;
     --shadow: rgba(45, 41, 31, 0.12);
 }
 
@@ -84,14 +84,15 @@ body {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     left: 0;
     width: 240px;
-    background-color: var(--card);
+    background-color: #ffffff;
     border: 1px solid var(--border);
     border-radius: 10px;
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
-    padding: 10px 0;
+    padding: 8px 0;
+    margin-top: 6px;
     z-index: 200;
 }
 
@@ -109,8 +110,24 @@ body {
 }
 
 .dropdown-menu a:hover {
-    background-color: var(--surface);
+    background-color: var(--cream);
     color: var(--button);
+}
+
+/* Active tab underline */
+.tab-link.active {
+    position: relative;
+}
+
+.tab-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--button);
+    bottom: -8px;
+    border-radius: 3px;
 }
 
 .btn {
@@ -325,4 +342,163 @@ body {
     .footer-content {
         align-items: flex-start;
     }
+}
+
+/* Carousel styles */
+.carousel-section {
+    padding: 40px 0 60px;
+}
+
+.carousel-section h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.56s cubic-bezier(.2,.9,.2,1);
+    will-change: transform;
+    gap: 0;
+}
+
+.carousel-item {
+    flex: 0 0 calc(100% / 3);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel-placeholder {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.shade-1 { background: #f2efe9; }
+.shade-2 { background: #e9e6f0; }
+.shade-3 { background: #efe8e6; }
+.shade-4 { background: #f6efe6; }
+.shade-5 { background: #eceff6; }
+.shade-6 { background: #f3f3e8; }
+
+.carousel-control {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.06);
+    color: var(--text);
+    border: none;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.18s ease, background 0.18s ease;
+    cursor: pointer;
+    z-index: 400; /* keep controls above hotspots */
+}
+
+.carousel-control.left { left: 8px; }
+.carousel-control.right { right: 8px; }
+
+
+/* Show controls only when hovering hotspots or the controls themselves */
+.carousel-hotspot.left:hover ~ .carousel-control.left,
+.carousel-hotspot.right:hover ~ .carousel-control.right,
+.carousel-control.left:hover,
+.carousel-control.right:hover {
+    opacity: 1;
+}
+
+/* full-bleed layout */
+.carousel-section.full-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 20px 0 0; /* sit right above the footer */
+    background: transparent;
+}
+
+.carousel-item + .carousel-item .carousel-placeholder,
+.carousel-item .carousel-placeholder {
+    border-right: 1px solid #ffffff;
+}
+
+.carousel-item:last-child .carousel-placeholder {
+    border-right: none;
+}
+
+/* Hotspot zones that trigger the arrow controls. They cover the leftmost and rightmost one-third of the carousel. */
+.carousel-hotspot {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 33.3333%;
+    z-index: 100; /* lower than controls so clicks reach buttons */
+    pointer-events: auto;
+}
+.carousel-hotspot.left { left: 0; }
+.carousel-hotspot.right { right: 0; }
+
+/* hide hotspots on small screens where touch controls are used */
+@media (max-width: 560px) {
+    .carousel-hotspot { display: none; }
+}
+
+/* Dots (indicator) */
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 450;
+    align-items: center;
+}
+.carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.95);
+    opacity: 0.9;
+    transition: width 220ms ease, background 180ms ease, opacity 180ms ease;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06) inset;
+}
+.carousel-dots .dot.active {
+    width: 28px; /* dash length when active */
+    height: 8px;
+    border-radius: 6px;
+    background: #ffffff;
+    opacity: 1;
+}
+
+@media (max-width: 560px) {
+    .carousel-dots { bottom: 8px; }
+    .carousel-dots .dot.active { width: 22px; }
+}
+
+.carousel-control .arrow {
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .carousel-item { flex: 0 0 calc(100% / 2); }
+}
+
+@media (max-width: 560px) {
+    .carousel-item { flex: 0 0 100%; }
+    .carousel-placeholder { height: 200px; }
 }
