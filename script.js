@@ -1,4 +1,6 @@
-﻿const dropdown = document.querySelector('.nav-dropdown');
+﻿document.documentElement.classList.add('js');
+
+const dropdown = document.querySelector('.nav-dropdown');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 
 if (dropdown && dropdownMenu) {
@@ -130,4 +132,38 @@ window.addEventListener('scroll', () => {
     // init
     updateLayout();
     start();
+})();
+
+    /* Scroll reveal: content rises into view as you scroll */
+(function() {
+    const selectors = '.summary-card, .skill-card, .project-tile, .project-section, .info-card, .carousel-section, .footer';
+    const targets = document.querySelectorAll(selectors);
+    if (!targets.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        targets.forEach(el => el.classList.add('in-view'));
+        return;
+    }
+
+    targets.forEach(el => {
+        el.classList.add('reveal');
+        const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'));
+        const idx = Math.min(siblings.indexOf(el), 8);
+        el.style.transitionDelay = `${idx * 80}ms`;
+    });
+
+    // reveal anything already on screen immediately (entrance animation)
+    const rect = target => (target.getBoundingClientRect().top < window.innerHeight - 30);
+    targets.forEach(el => { if (rect(el)) el.classList.add('in-view'); });
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    targets.forEach(el => io.observe(el));
 })();
