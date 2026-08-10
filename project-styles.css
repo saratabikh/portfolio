@@ -103,6 +103,46 @@
     margin: 0;
 }
 
+/* wide side-by-side pair: full page width, landscape */
+.image-pair--wide {
+    max-width: 100%;
+    margin: 26px 0 40px;
+}
+
+.image-pair--wide .project-image {
+    aspect-ratio: 16 / 9;
+}
+
+/* three images in a row, full page width */
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 26px 0 40px;
+}
+
+.image-row .project-image {
+    height: auto;
+    margin: 0;
+    aspect-ratio: 3 / 2;
+}
+
+@media (max-width: 760px) {
+    .image-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* show more of the top of a cover-cropped image */
+.image-align-top {
+    object-position: 50% 0%;
+}
+
+.image-align-top-25 {
+    object-position: 50% 25%;
+}
+
 @media (max-width: 640px) {
     .image-pair {
         grid-template-columns: 1fr;
