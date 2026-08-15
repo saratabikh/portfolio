@@ -35,6 +35,30 @@
     gap: 42px;
 }
 
+.overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.overview-header h2 {
+    margin-bottom: 18px;
+}
+
+.shocklab-logo {
+    width: 120px;
+    height: auto;
+    float: none;
+}
+
+@media (max-width: 760px) {
+    .overview-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 .project-section h2 {
     font-family: var(--font-serif);
     font-size: clamp(24px, 3vw, 30px);
