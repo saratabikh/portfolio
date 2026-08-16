@@ -151,6 +151,17 @@
     aspect-ratio: 3 / 2;
 }
 
+.image-row--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.image-row--four .project-image {
+    aspect-ratio: 955 / 673;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 @media (max-width: 760px) {
     .image-row {
         grid-template-columns: 1fr;
@@ -215,6 +226,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 10px 14px;
     border-radius: 0;
     background-color: var(--accent-soft);
