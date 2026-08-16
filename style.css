@@ -5,7 +5,7 @@
     --surface: #fdfdfc;
     --accent: #d23b24;
     --accent-hover: #b32a1a;
-    --accent-soft: #d8e8f8; /*pink f8e0d8*/
+    --accent-soft: #f8e0d8; /*pink f8e0d8 blue d8e8f8*/
     --text: #1b1b1d;
     --muted: #595a5e;
     --border: #e8e6e3;
@@ -261,12 +261,15 @@ body {
     width: 100%;
     border-radius: 0;
     box-shadow: 0 18px 36px rgba(25, 25, 28, 0.14);
+    align-self: stretch;
 }
 
 .hero-float img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
 }
 
 @media (max-width: 1180px) {
@@ -283,6 +286,12 @@ body {
     .hero-float {
         grid-column: auto;
         max-width: 100%;
+        align-self: auto;
+    }
+
+    .hero-float img {
+        height: auto;
+        object-fit: fill;
     }
 
     .summary-grid {

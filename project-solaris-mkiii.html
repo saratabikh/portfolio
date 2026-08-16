@@ -42,17 +42,17 @@
                 <div class="project-main-content">
                     <section class="project-section">
                         <h2>Overview</h2>
-                        <img src="images/project-solaris-mkiii-team-pic.jpg" alt="Solaris MkIII team" class="project-image image-align-top-25">
                         <p>
-                            In Solaris MkIII development, I worked on combustion stability for a liquid oxygen hybrid rocket engine. My focus was on designing and integrating components that reduced instability, based on literature review and simulation.
+                        Solaris MkIII is a major milestone for our team: our first Liquid Oxygen (LOX) hybrid engine, targeting an ambitious 10 kN of thrust. Unlike our previous engines such as Solaris MkII, which operated at relatively low chamber pressures, Solaris MkIII's high chamber pressure introduced a critical new challenge, combustion stability. Tasked with the team's first-ever attempt at solving this, I was fully responsible for our stability architecture. Based on extensive literature review and simulation, I designed and integrated a complete suite of mitigation features, including injector-face baffles, Helmholtz resonators, and a fuel insert to ensure a stable and reliable burn.                        
                         </p>
-                        <p>
-                            To combat combustion instabilities in the Solaris MkIII hybrid engine, I designed a suite of mitigation features, including an injector baffle, Helmholtz resonators, and a specialized fuel insert.
-                        </p>
+                        <figure class="image-figure">
+                            <img src="images/project-solaris-mkiii-team-pic.jpg" alt="Solaris MkIII team" class="project-image project-image--overview">
+                            <figcaption class="image-caption">Race 2 Space Away Team with Solaris MkIII on test stand</figcaption>
+                        </figure>
                     </section>
 
                     <section class="project-section">
-                        <h2>Stability Solution</h2>
+                        <h2>Part Design</h2>
                         <div class="image-pair">
                             <figure class="image-figure">
                                 <img src="images/resonator-and-baffles-cad.jpg" alt="Resonator and baffles CAD model" class="project-image">
@@ -66,29 +66,22 @@
                         <div class="achievement-item">
                             <h4>Helmholtz Resonators</h4>
                             <p>
-                                I developed Helmholtz resonators tuned to resonant frequencies in the engine to absorb acoustic energy and mitigate combustion oscillations.
-                                To mitigate high-frequency acoustic modes—specifically a predicted 1400 Hz first longitudinal mode—I integrated an assembly of 20 Helmholtz resonators spaced evenly around the chamber. To ensure the components could withstand the thermal environment prior to machining the cavities, the resonators were hard anodised. Because conventional O-rings would not allow for individual cavity sealing, I designed the inner section as a strict press-fit against the shoulder, ensuring a clean interface essential for resonator performance.
+                                To mitigate high-frequency acoustic modes, specifically a predicted 1400 Hz first longitudinal mode, I integrated an assembly of 20 Helmholtz resonators spaced evenly around the chamber. To ensure the components could withstand the thermal environment prior to machining the cavities, the resonators were hard anodised. Because conventional O-rings would not allow for individual cavity sealing, I designed the inner section as a strict press-fit against the shoulder, ensuring a clean interface essential for resonator performance.
                             </p>
                         </div>
                         <div class="achievement-item">
                             <h4>Injector-Face Baffles</h4>
                             <p>
-                                I designed injector-face baffles to reduce instability caused by the first tangential mode.
                                 I designed a three-spoke phenolic baffle intended for use with a swirl injector. It targeted lower-frequency combustion instability modes and doubled as a pre-combustion chamber, simplifying the design and reducing part count. The top surface acted as an insulator to shield the forward closure from combustion gases, and the spokes were carefully tapered to avoid disrupting the oxidizer spray cones.
                             </p>
                         </div>
                         <div class="achievement-item">
                             <h4>Fuel Inserts</h4>
                             <p>
-                                I implemented fuel inserts to control regression behaviour and reduce low-frequency oscillations, supporting stable hybrid combustion throughout the burn.
                                 To address low-frequency instabilities (typically under 100 Hz), I designed an interchangeable fuel insert with a 30% ABS infill, which was higher than the surrounding fuel grain's 20% infill. This difference in regression rates created a small step in the boundary layer as the fuel burned away, promoting more stable and controlled combustion.
                             </p>
                         </div>
-                    </section>
-
-                    <section class="project-section">
-                        <h2>Component Design</h2>
-                        <div class="image-row image-row--four">
+                        <div class="image-row image-row--four image-row--square">
                             <figure class="image-figure">
                                 <img src="images/res-inner.jpg" alt="Resonator inner" class="project-image">
                                 <figcaption class="image-caption">Resonator inner</figcaption>
@@ -109,16 +102,11 @@
                     </section>
 
                     <section class="project-section">
-                        <h2>Engineering Process</h2>
-                        <p>
-                            My work involved completing a literature review, running PDR and CDR cycles for internal and external stakeholders, and producing CAD models and engineering drawings.
-                        </p>
-                        <ul class="project-list">
-                            <li>Review of combustion instability literature</li>
-                            <li>Design of acoustic damping systems</li>
-                            <li>Component integration in Creo and Windchill</li>
-                            <li>Technical documentation and review cycles</li>
-                        </ul>
+                        <h2>Hotfire Test</h2>
+                        <figure class="image-figure image-figure--single">
+                            <video src="images/mkiii-hotfire-vid.mp4" controls class="project-image"></video>
+                            <figcaption class="image-caption">Solaris MkIII hotfire at Race 2 Space 2025, failure after 0.5 seconds caused by manufacturing defect in threads</figcaption>
+                        </figure>
                     </section>
 
                     <section class="project-section">

@@ -128,8 +128,6 @@ window.addEventListener('scroll', () => {
         });
     }
 
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', start);
     window.addEventListener('resize', () => { updateLayout(); });
 
     // init

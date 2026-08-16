@@ -162,6 +162,10 @@
     object-fit: cover;
 }
 
+.image-row--square .project-image {
+    aspect-ratio: 1 / 1;
+}
+
 @media (max-width: 760px) {
     .image-row {
         grid-template-columns: 1fr;
@@ -176,6 +180,15 @@
 
 .image-align-top-25 {
     object-position: 50% 25%;
+}
+
+.project-image--overview {
+    max-width: 720px;
+    height: auto;
+    margin: 20px auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 @media (max-width: 640px) {
